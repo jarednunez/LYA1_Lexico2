@@ -148,6 +148,8 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpLogico);
                         if(c== '!')
                         estado=13;
+                        else if (c== '=')
+                        estado=15;
                         else 
                         estado = F;
                         break;
