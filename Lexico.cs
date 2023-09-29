@@ -55,6 +55,8 @@ namespace LYA1_Lexico2
                             estado = 11;
                         else if (c=='|')
                             estado = 12;
+                        else if (c=='!')
+                            estado = 13;
                          else 
                             estado =8;
                         break;
@@ -134,12 +136,22 @@ namespace LYA1_Lexico2
                         else 
                         estado = F;
                         break;
-
-
-                        case 14: 
-                        setClasificacion(Tipos.OpRelacional);
+                        case 13: 
+                        setClasificacion(Tipos.OpLogico);
                         estado = F;
                         break;
+                    case 14:
+                        setClasificacion(Tipos.Caracter);
+                        if(c== '!')
+                        estado=15;
+                        else 
+                        estado = F;
+                        break;
+                    case 15:
+                        setClasificacion(Tipos.OpRelacional);
+                        estado=F;
+                        break;
+
                 }
                 if (estado >= 0)
                 {
