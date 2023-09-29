@@ -166,6 +166,15 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpRelacional); 
                         estado=F;
                         break;
+                    case 18:
+                        setClasificacion(Tipos.OpRelacional); 
+                        if (c== '<')
+                        estado=17;
+                        else 
+                        estado =F;
+                        break;
+                    
+
 
                 }
                 if (estado >= 0)
