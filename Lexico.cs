@@ -60,7 +60,7 @@ namespace LYA1_Lexico2
                         else if (c=='>')
                             estado = 16;
                         else if (c=='<')
-                            estado = 16;
+                            estado = 17;
                          else 
                             estado =8;
                         break;
@@ -162,28 +162,35 @@ namespace LYA1_Lexico2
                         break;
                     case 16:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c== '<'||c== '>')
+                        if (c== '<')
                         estado=18;
                         else 
                         estado=F;
                         break;
                     case 17:
                         setClasificacion(Tipos.OpRelacional);
+                        if (c== '<')
+                        estado=18;
+                        else 
                         estado=F;
                         break;
                     case 18:
+                        setClasificacion(Tipos.OpRelacional);
+                        estado=F;
+                        break;
+                    case 19:
                     setClasificacion(Tipos.OpRelacional);
-                    if (c== '='||c== '>')
-                    estado =18;
+                    if (c== '<')
+                    estado =17;
                     else
                     estado=F;
                     break;
-                    case 19:
+                    case 20:
                         setClasificacion(Tipos.OpRelacional); 
                         if (c== '='||c== '>')
                         estado =F;
                         break;
-                    case 20:
+                    case 21:
                         setClasificacion(Tipos.OpRelacional);
                         estado=F;
                         break;
