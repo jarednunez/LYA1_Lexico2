@@ -181,7 +181,7 @@ namespace LYA1_Lexico2
                     case 19:
                     setClasificacion(Tipos.OpRelacional);
                     if (c== '<')
-                    estado =17;
+                    estado =18;
                     else
                     estado=F;
                     break;
