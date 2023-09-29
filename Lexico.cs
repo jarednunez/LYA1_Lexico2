@@ -169,12 +169,19 @@ namespace LYA1_Lexico2
                     case 18:
                         setClasificacion(Tipos.OpRelacional); 
                         if (c== '<')
-                        estado=17;
+                        estado=18;
                         else 
                         estado =F;
                         break;
-                    
-
+                    case 19:
+                        setClasificacion(Tipos.OpRelacional);
+                        if (c== '>'||c== '=') 
+                        estado=F;
+                        break;
+                    case 20:
+                        setClasificacion(Tipos.OpRelacional);
+                        estado=F;
+                        break;
 
                 }
                 if (estado >= 0)
