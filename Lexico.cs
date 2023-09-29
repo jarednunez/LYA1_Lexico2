@@ -148,6 +148,8 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpLogico);
                         if(c== '!')
                         estado=13;
+                        else if(c== '=')
+                        estado=15;
                         else 
                         estado = F;
                         break;
@@ -166,20 +168,20 @@ namespace LYA1_Lexico2
                         estado=F;
                         break;
                     case 17:
-                        setClasificacion(Tipos.OpRelacional); 
+                        setClasificacion(Tipos.OpRelacional);
                         estado=F;
                         break;
                     case 18:
-                        setClasificacion(Tipos.OpRelacional); 
-                        if (c== '<')
-                        estado=18;
-                        else 
-                        estado =F;
-                        break;
+                    setClasificacion(Tipos.OpRelacional);
+                    if (c== '='||c== '>')
+                    estado =18;
+                    else
+                    estado=F;
+                    break;
                     case 19:
-                        setClasificacion(Tipos.OpRelacional);
-                        if (c== '>'||c== '=') 
-                        estado=F;
+                        setClasificacion(Tipos.OpRelacional); 
+                        if (c== '='||c== '>')
+                        estado =F;
                         break;
                     case 20:
                         setClasificacion(Tipos.OpRelacional);

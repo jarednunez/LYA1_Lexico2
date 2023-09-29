@@ -11,9 +11,8 @@ x26 = Identificador
 ! = OpLogico
 ! = OpLogico
 = = Asignacion
-<<< = OpRelacional
+<<<> = OpRelacional
 >> = OpRelacional
-> = OpRelacional
 > = OpRelacional
 = = Asignacion
 < = OpRelacional
