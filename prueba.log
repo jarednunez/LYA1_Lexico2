@@ -15,3 +15,5 @@ x26 = Identificador
 = = Asignacion
 < = OpRelacional
 = = Asignacion
++++---+ = IncTermino
+= = Asignacion

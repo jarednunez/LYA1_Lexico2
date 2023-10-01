@@ -183,10 +183,9 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpRelacional);
                         if (c == '<')
                             estado = 18;
-                        else 
-                            estado=F;
-                        setClasificacion(Tipos.OpRelacional);
-                        if (c == '=' || c == '>'||c == '=')  //problema de cilado posiblemente
+                        else if (c == '>')
+                            estado = F;
+                        else if (c== '=')
                             estado = F;
                         break;
                     case 18:
