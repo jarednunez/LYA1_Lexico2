@@ -154,13 +154,13 @@ namespace LYA1_Lexico2
                         break;
                     case 13:
                         setClasificacion(Tipos.OpLogico);
-                            if (c == '!')
+                        if (c == '!')
                             estado = 15;
-                            else 
+                        else
                             estado = F;
                         if (c == '=')
-                        setClasificacion(Tipos.OpRelacional);
-                        else 
+                            setClasificacion(Tipos.OpRelacional);
+                        else
                             estado = F;
                         break;
                     case 14:
@@ -169,8 +169,8 @@ namespace LYA1_Lexico2
                         break;
                     case 15:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c== '=')
-                        estado = F;
+                        if (c == '=')
+                            estado = F;
                         break;
                     case 16:
                         setClasificacion(Tipos.OpRelacional);
@@ -186,7 +186,7 @@ namespace LYA1_Lexico2
                         if (c == '<')
                             estado = 18;
                         setClasificacion(Tipos.OpRelacional);
-                        if ( c == '>')
+                        if (c == '>')
                             estado = F;
                         else if (c == '=')
                             estado = F;
@@ -198,49 +198,50 @@ namespace LYA1_Lexico2
                         break;
                     case 19:
                         setClasificacion(Tipos.OpTermino);
-                        if (c == '+'||c == '-')
-                        estado = 21;
+                        if (c == '+' || c == '-')
+                            estado = 21;
                         else if (c == '=')
-                        estado =F;
-                        setClasificacion(Tipos. OpTermino);
+                            estado = F;
+                        setClasificacion(Tipos.OpTermino);
                         if (c == '-')
-                        estado = F;
+                            estado = F;
                         else if (c == '=')
-                        estado = F;
+                            estado = F;
                         break;
                     case 20:
                         setClasificacion(Tipos.IncTermino);
-                        if (c == '-'||c == '=')
-                        estado = F;
-                     break;
+                        if (c == '-' || c == '=')
+                            estado = F;
+                        break;
                     case 21:
                         setClasificacion(Tipos.IncTermino);
                         estado = F;
                         break;
                     case 22:
                         setClasificacion(Tipos.OpFactor);
-                        if (c == '*'||c == '/'||c == '%') 
+                        if (c == '*' || c == '/' || c == '%')
                             estado = 23;
                         setClasificacion(Tipos.OpFactor);
-                        if (c=='*')
-                        estado =F;
+                        if (c == '*')
+                            estado = F;
                         else if (c == '=')
-                        estado =F;
+                            estado = F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '/')
-                        estado =F;
+                            estado = F;
                         else if (c == '=')
-                        estado =F;
+                            estado = F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '%')
-                        estado =F;
-                       else  if (c == '=')
                             estado = F;
+                        else
+                            setClasificacion(Tipos.InFactor);
+                        estado = F;
                         break;
                     case 23:
                         setClasificacion(Tipos.InFactor);
                         if (c == '=')
-                        estado = F;
+                            estado = F;
                         break;
                 }
                 if (estado >= 0)
