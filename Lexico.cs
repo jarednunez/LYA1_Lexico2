@@ -57,7 +57,7 @@ namespace LYA1_Lexico2
                             estado = 12;
                         else if (c == '!')
                             estado = 13;
-                        else if (c == '>')
+                        else if (c == '<'||c == '>')
                             estado = 16;
                         else if (c == '<')
                             estado = 17;
@@ -172,7 +172,7 @@ namespace LYA1_Lexico2
                         break;
                     case 16:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '>'|| c=='<')
+                        if (c == '<'|| c=='>')
                         estado = F;
                         else 
                         estado = 18;

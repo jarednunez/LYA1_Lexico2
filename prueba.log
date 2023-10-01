@@ -4,14 +4,16 @@ x26 = Identificador
 ; = FinSentencia
 = = Asignacion
 = = Asignacion
-& = Caracter
+= = Asignacion
 && = OpRelacional
+& = Caracter
 || = OpRelacional
 | = Caracter
 ! = OpLogico
 !=<<<>>>
 > = OpRelacional
 = = Asignacion
-<=
-+++---+ = OpRelacional
+< = OpRelacional
+= = Asignacion
++++---+ = OpTermino
 = = Asignacion
