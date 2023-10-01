@@ -219,7 +219,7 @@ namespace LYA1_Lexico2
                         break;
                     case 22:
                         setClasificacion(Tipos.OpFactor);
-                        if (c == '*' || c == '/' || c == '%')
+                        if (c == '*' || c == '/' || c == '%') //checar esto mañana
                             estado = 23;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '*')
