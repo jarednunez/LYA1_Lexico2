@@ -153,9 +153,12 @@ namespace LYA1_Lexico2
                     case 13:
                         setClasificacion(Tipos.OpLogico);
                             if (c == '!')
+                            estado = F;
+                            else 
                             estado = 15;
-                            else if (c == '=')
+                        if (c == '=')
                         setClasificacion(Tipos.OpRelacional);
+                        else 
                             estado = F;
                         break;
                     case 14:
@@ -169,26 +172,29 @@ namespace LYA1_Lexico2
                         break;
                     case 16:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '<'|| c=='>')
-                            estado = 18;
-                        else
+                        if (c == '>'|| c=='<')
+                        estado = F;
+                        else 
+                        estado = 18;
+                        if (c == '=')
                             estado = F;
                         break;
                     case 17:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '<'|| c=='=')
+                        if (c == '<')
                             estado = F;
+                        setClasificacion(Tipos.OpRelacional);
+                        if (c == '=' || c == '>')
+                            estado = 18;
+                        else 
+                        estado =F;
                         break;
                     case 18:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '=' || c == '>')
-                            estado = F;
-                        break;
-                    case 19:
-                        setClasificacion(Tipos.OpRelacional);
+                        if (c == '=')
                         estado = F;
                         break;
-                    case 20:
+                    case 19:
                         setClasificacion(Tipos.OpTermino);
                         if (c == '+'||c=='-')
                             estado = 21;

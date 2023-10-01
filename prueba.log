@@ -5,38 +5,13 @@ x26 = Identificador
 = = Asignacion
 = = Asignacion
 & = Caracter
-&& = OpLogico
-|| = OpLogico
+&& = OpRelacional
+|| = OpRelacional
 | = Caracter
 ! = OpLogico
-!= = OpRelacional
-< = OpRelacional
-< = OpRelacional
-<>>>
+!=<<<>>>
 > = OpRelacional
 = = Asignacion
-< = OpRelacional
+<=
++++---+ = OpRelacional
 = = Asignacion
-+ = OpRelacional
-+ = OpRelacional
-+ = OpRelacional
----+ = OpTermino
-= = Asignacion
-- = OpTermino
-= = Asignacion
-*/* = OpTermino
-= = Asignacion
-/ = OpTermino
-= = Asignacion
-%% = OpTermino
-= = Asignacion
-? = Asignacion
-" = Asignacion
-" = Asignacion
-" = Asignacion
-Hola = Identificador
-mundo = Identificador
-" = Asignacion
-{ = Asignacion
-} = Asignacion
-" = Asignacion
