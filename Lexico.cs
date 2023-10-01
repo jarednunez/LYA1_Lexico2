@@ -224,13 +224,17 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpFactor);
                         if (c=='*')
                         estado =F;
+                        else if (c == '=')
+                        estado =F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '/')
+                        estado =F;
+                        else if (c == '=')
                         estado =F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '%')
                         estado =F;
-                        else if (c == '=')
+                       else  if (c == '=')
                             estado = F;
                         break;
                     case 23:
