@@ -210,40 +210,32 @@ namespace LYA1_Lexico2
                         break;
                     case 20:
                         setClasificacion(Tipos.IncTermino);
+                        if (c == '-'||c == '=')
                         estado = F;
                      break;
                     case 21:
                         setClasificacion(Tipos.IncTermino);
                         estado = F;
                         break;
-                    case 31:
+                    case 22:
                         setClasificacion(Tipos.OpFactor);
-                        if (c == '*')
+                        if (c == '*'||c == '/'||c == '%') 
                             estado = 23;
-                        else
-                            estado = F;
-                        break;
-                    case 32:
+                        setClasificacion(Tipos.OpFactor);
+                        if (c=='*')
+                        estado =F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '/')
-                            estado = 23;
-                        else
-                            estado = F;
-                        break;
-                    case 33:
+                        estado =F;
                         setClasificacion(Tipos.OpFactor);
                         if (c == '%')
-                            estado = 23;
-                        else
+                        estado =F;
+                        else if (c == '=')
                             estado = F;
                         break;
-                    case 34:
+                    case 23:
                         setClasificacion(Tipos.InFactor);
                         if (c == '=')
-                            estado = F;
-                        break;
-                    case 35:
-                        setClasificacion(Tipos.InFactor);
                         estado = F;
                         break;
                 }
