@@ -68,11 +68,11 @@ namespace LYA1_Lexico2
                         else if (c == '-')
                             estado = 20;
                         else if (c == '*')
-                            estado = 21;
+                            estado = 22;
                         else if (c == '/')
-                            estado = 21;
+                            estado = 22;
                         else if (c == '%')
-                            estado = 21;
+                            estado = 22;
                         else
                             estado = 8;
                         break;
@@ -198,7 +198,7 @@ namespace LYA1_Lexico2
                         break;
                     case 19:
                         setClasificacion(Tipos.OpTermino);
-                        if (c == '+'||c == '-') 
+                        if (c == '+'||c == '-')
                         estado = 21;
                         else if (c == '=')
                         estado =F;
@@ -210,7 +210,6 @@ namespace LYA1_Lexico2
                         break;
                     case 20:
                         setClasificacion(Tipos.IncTermino);
-                         if (c== '='||c == '-')
                         estado = F;
                      break;
                     case 21:
