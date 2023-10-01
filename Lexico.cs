@@ -186,7 +186,7 @@ namespace LYA1_Lexico2
                         else 
                             estado=F;
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '=' || c == '>'||c == '=')
+                        if (c == '=' || c == '>'||c == '=')  //problema de cilado posiblemente
                             estado = F;
                         break;
                     case 18:
@@ -196,19 +196,17 @@ namespace LYA1_Lexico2
                         break;
                     case 19:
                         setClasificacion(Tipos.OpTermino);
-                        if (c == '+'||c=='-')
-                            estado = 21;
+                        if (c == '+'||c == '-')
+                        estado = 21;
                         else
-                            estado = F;
+                        estado = F;
                         break;
                     case 20:
-                        setClasificacion(Tipos.OpTermino);
-                        if (c == '=')
-                            estado = F;
-                        break;
-                    case 22:
+
+                     break;
+                    case 21:
                         setClasificacion(Tipos.IncTermino);
-                        if (c == '=')
+                         if (c == '=')
                         estado = F;
                         break;
                     case 31:
