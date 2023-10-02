@@ -208,28 +208,13 @@ namespace LYA1_Lexico2
                         break;
                     case 22:
                         setClasificacion(Tipos.OpFactor);
-                        if (c == '*' || c == '/' || c == '%') //checar esto mañana
-                            estado = 23;
-                        setClasificacion(Tipos.OpFactor);
-                        if (c == '*')
-                            estado = F;
-                        else if (c == '=')
-                            estado = F;
-                        setClasificacion(Tipos.OpFactor);
-                        if (c == '/')
-                            estado = F;
-                        else if (c == '=')
-                            estado = F;
-                        setClasificacion(Tipos.OpFactor);
-                        if (c == '%')
-                            estado = F;
-                        else
-                            setClasificacion(Tipos.InFactor);
+                        if (c=='=')
+                        estado = 23;
+                        else 
                         estado = F;
                         break;
                     case 23:
                         setClasificacion(Tipos.InFactor);
-                        if (c == '=')
                             estado = F;
                         break;
                 }
