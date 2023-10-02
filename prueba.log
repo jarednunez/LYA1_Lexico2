@@ -19,12 +19,13 @@ x26 = Identificador
 > = OpRelacional
 >= = OpRelacional
 <= = OpRelacional
-++ = IncTermino
++ = OpTermino
++ = OpTermino
 + = OpTermino
 - = IncTermino
 - = IncTermino
--+ = IncTermino
-= = Asignacion
+- = IncTermino
++= = IncTermino
 - = IncTermino
 = = Asignacion
 * = InFactor

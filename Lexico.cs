@@ -176,7 +176,7 @@ namespace LYA1_Lexico2
                         break;
                     case 17:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '=')
+                        if (c == '='||c == '>')
                             estado = 18;
                             else
                             estado = F;
@@ -189,17 +189,15 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpTermino);
                         if (c == '+' || c == '-')
                             estado = 21;
-                        else if (c == '=')
+                            else 
                             estado = F;
-                        setClasificacion(Tipos.OpTermino);
-                        if (c == '-')
-                            estado = F;
-                        else if (c == '=')
+                        if (c == '=')
+                            estado = 21;
+                            else 
                             estado = F;
                         break;
                     case 20:
                         setClasificacion(Tipos.IncTermino);
-                        if (c == '-' || c == '=')
                             estado = F;
                         break;
                     case 21:
