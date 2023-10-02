@@ -10,18 +10,15 @@ x26 = Identificador
 || = OpRelacional
 | = Caracter
 ! = OpLogico
-! = OpRelacional
-= = Asignacion
+!= = OpRelacional
 < = OpRelacional
 < = OpRelacional
 < = OpRelacional
 > = OpRelacional
 > = OpRelacional
->
 > = OpRelacional
-= = Asignacion
-< = OpRelacional
-= = Asignacion
+>= = OpRelacional
+<= = OpRelacional
 ++ = IncTermino
 + = OpTermino
 - = IncTermino
