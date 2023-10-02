@@ -20,7 +20,7 @@ x26 = Identificador
 ++ = IncTermino
 + = OpTermino
 -- = IncTermino
-- = IncTermino
+- = OpTermino
 += = IncTermino
 -= = IncTermino
 * = InFactor
