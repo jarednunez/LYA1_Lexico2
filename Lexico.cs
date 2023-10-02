@@ -75,6 +75,10 @@ namespace LYA1_Lexico2
                             estado = 22;
                         else if (c == '?')
                             estado =24;
+                        else if (c == '\"')
+                            estado = 25;
+                        else if (c == '\'')
+                            estado =26;
                         else
                             estado = 8;
                         break;
@@ -223,6 +227,20 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.OpTernario);
                         estado = F;
                         break;
+                    case 25:
+                        setClasificacion(Tipos.Cadena);
+                        if (c=='\'')
+                        estado = E;
+                        else 
+                        estado = F;
+                        break;
+                    case 26:
+                        setClasificacion(Tipos.Cadena);
+                        if (c=='\"')
+                        estado = F;
+                        break;
+                    
+                    
                 }
                 if (estado >= 0)
                 {

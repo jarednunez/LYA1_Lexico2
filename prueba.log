@@ -30,12 +30,12 @@ x26 = Identificador
 % = OpFactor
 %= = InFactor
 ? = OpTernario
-" = Asignacion
-" = Asignacion
-" = Asignacion
+" = Cadena
+" = Cadena
+" = Cadena
 Hola = Identificador
 mundo = Identificador
-" = Asignacion
+" = Cadena
 { = Asignacion
 } = Asignacion
-" = Asignacion
+" = Cadena
