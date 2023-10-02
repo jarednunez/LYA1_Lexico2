@@ -187,14 +187,16 @@ namespace LYA1_Lexico2
                         break;
                     case 19:
                         setClasificacion(Tipos.OpTermino);
-                        if (c == '='||c == '-')
+                        if (c == '+'||c == '=')
                             estado = 21;
                             else 
                             estado = F;
                         break;
                     case 20:
                         setClasificacion(Tipos.IncTermino);
-                        if (c == '=')
+                        if (c == '-'||c == '=')
+                            estado = 21;
+                            else 
                             estado = F;
                         break;
                     case 21:
