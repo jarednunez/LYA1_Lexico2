@@ -73,6 +73,8 @@ namespace LYA1_Lexico2
                             estado = 22;
                         else if (c == '%')
                             estado = 22;
+                        else if (c == '?')
+                            estado =24;
                         else
                             estado = 8;
                         break;
@@ -216,6 +218,10 @@ namespace LYA1_Lexico2
                     case 23:
                         setClasificacion(Tipos.InFactor);
                             estado = F;
+                        break;
+                    case 24:
+                        setClasificacion(Tipos.OpTernario);
+                        estado = F;
                         break;
                 }
                 if (estado >= 0)

@@ -29,7 +29,7 @@ x26 = Identificador
 /= = InFactor
 % = OpFactor
 %= = InFactor
-? = Asignacion
+? = OpTernario
 " = Asignacion
 " = Asignacion
 " = Asignacion
