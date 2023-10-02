@@ -13,10 +13,8 @@ x26 = Identificador
 != = OpRelacional
 < = OpRelacional
 < = OpRelacional
-< = OpRelacional
-> = OpRelacional
-> = OpRelacional
-> = OpRelacional
+<> = OpRelacional
+>> = OpRelacional
 >= = OpRelacional
 <= = OpRelacional
 ++ = IncTermino
