@@ -30,8 +30,5 @@ x26 = Identificador
 % = OpFactor
 %= = InFactor
 ? = OpTernario
-" = Cadena
-" = Cadena
-"Hola mundo = Cadena
-"
-{} = Cadena
+"""Hola mundo"
+{}" = Cadena
