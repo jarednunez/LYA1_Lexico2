@@ -79,6 +79,10 @@ namespace LYA1_Lexico2
                             estado = 25;
                         else if (c == '\'')
                             estado =26;
+                        else if (c == '{')
+                            estado =27;
+                        else if (c == '}')
+                            estado =27;
                         else
                             estado = 8;
                         break;
@@ -231,7 +235,7 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.Cadena);
                         if (c=='\'')
                         estado = E;
-                        else 
+                        else if (c=='\"') 
                         estado = F;
                         break;
                     case 26:
@@ -239,7 +243,10 @@ namespace LYA1_Lexico2
                         if (c=='\"')
                         estado = F;
                         break;
-                    
+                    case 27:
+                        setClasificacion(Tipos.Caracter);
+                        estado =F;
+                    break;
                     
                 }
                 if (estado >= 0)

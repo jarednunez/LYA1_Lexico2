@@ -32,10 +32,6 @@ x26 = Identificador
 ? = OpTernario
 " = Cadena
 " = Cadena
-" = Cadena
-Hola = Identificador
-mundo = Identificador
-" = Cadena
-{ = Asignacion
-} = Asignacion
-" = Cadena
+"Hola mundo = Cadena
+"
+{} = Cadena
