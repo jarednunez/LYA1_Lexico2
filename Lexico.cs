@@ -51,6 +51,8 @@ namespace LYA1_Lexico2
                             estado = 2;
                         else if (c == ';')
                             estado = 10;
+                        else if (c == '=')
+                            estado = 8; // hice este ajuste por cualquier cosa o cualquier error 
                         else if (c == '&')
                             estado = 11;
                         else if (c == '|')
@@ -77,8 +79,12 @@ namespace LYA1_Lexico2
                             estado = 24;
                         else if (c == '\"')
                             estado = 25;
-                        else if (c == '\'')
+                        else if (c == '\"')
                             estado = 27;
+                        else if (c == '{')
+                        estado = 27;
+                        else if (c == '}')
+                        estado = 27;
                         else
                             estado = 8;
                         break;
@@ -134,7 +140,8 @@ namespace LYA1_Lexico2
                         setClasificacion(Tipos.Asignacion);
                         if (c == '=')
                             estado = 9;
-                        estado = F;
+                        else
+                            estado = F;
                         break;
                     case 9:
                         setClasificacion(Tipos.OpRelacional);
@@ -175,12 +182,9 @@ namespace LYA1_Lexico2
                         break;
                     case 16:
                         setClasificacion(Tipos.OpRelacional);
-                        if (c == '<')
-                            estado = 18;
-                        else
+                        if (c == '<' || c == '>')
                             estado = F;
-                        setClasificacion(Tipos.OpRelacional);
-                        if (c == '=' || c == '>')
+                        else if (c == '=')
                             estado = 18;
                         else
                             estado = F;
@@ -188,6 +192,8 @@ namespace LYA1_Lexico2
                     case 17:
                         setClasificacion(Tipos.OpRelacional);
                         if (c == '=')
+                            estado = 18;
+                        else
                             estado = F;
                         break;
                     case 18:
@@ -230,24 +236,27 @@ namespace LYA1_Lexico2
                     case 25:
                         setClasificacion(Tipos.Cadena);
                         if (c == '\"')
-                            estado = 27;
-                        else
+                            estado = 26;
+                        else if (FinArchivo())
                             estado = F;
                         break;
                     case 26:
                         setClasificacion(Tipos.Cadena);
-                        estado = F;
-                        break;
-                    case 27:
-                        setClasificacion(Tipos.Cadena);
-                        if (c == '\'')
-                            estado = 28;
-                        else if (FinArchivo())
+                        estado = 27;
+                        if (FinArchivo())
                             estado = E;
                         else
-                            estado = 27;
+                            estado = F;
                         break;
-                    case 28:
+                        case 27:
+                    estado = F;
+                    break;
+                      case 28:
+                        setClasificacion(Tipos.inicio);
+                        if (c=='{')
+                        estado = F;
+                        else if (c=='}')
+                        setClasificacion(Tipos.Fin);
                         estado = F;
                         break;
 

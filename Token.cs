@@ -11,7 +11,7 @@ namespace LYA1_Lexico2
         {
             Identificador,Numero,Caracter, Asignacion,OpRelacional,FinSentencia,OpLogico,OpFactor,
             InFactor,OpTernario,Cadena,
-            OpTermino, IncTermino,FinArchivo, 
+            OpTermino, IncTermino,FinArchivo, Moneda, inicio, Fin 
         }
         private string contenido;
         private Tipos  clasificacion;

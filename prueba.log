@@ -2,8 +2,7 @@ x26 = Identificador
 = = Asignacion
 1.5e-8 = Numero
 ; = FinSentencia
-= = Asignacion
-= = Asignacion
+== = OpRelacional
 = = Asignacion
 && = OpRelacional
 & = Caracter
@@ -13,8 +12,10 @@ x26 = Identificador
 != = OpRelacional
 < = OpRelacional
 < = OpRelacional
-<> = OpRelacional
->> = OpRelacional
+< = OpRelacional
+> = OpRelacional
+> = OpRelacional
+> = OpRelacional
 >= = OpRelacional
 <= = OpRelacional
 ++ = IncTermino
@@ -30,5 +31,9 @@ x26 = Identificador
 % = OpFactor
 %= = InFactor
 ? = OpTernario
-"""Hola mundo"
-{}" = Cadena
+"" = Cadena
+"Hola mundo" = Cadena
+{ = Cadena
+} = Cadena
+"
+ = Cadena
