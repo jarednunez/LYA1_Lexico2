@@ -1,4 +1,4 @@
-{ = Identificador
+{ = Numero
 // = InFactor
 Prueba = Identificador
 de = Identificador
@@ -48,5 +48,5 @@ Vacia = Identificador
 /= = InFactor
 %= = InFactor
 ? = OpTernario
-} = Inicio
-Error Lexico: Se espera un digito
+} = Fin
+ = Fin

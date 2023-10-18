@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LYA1_Lexico3
 {
-    public class Lexico : Token, IDisposable
+    public class Lexico : Token, IDisposable 
     {
         const int F = -1;
         const int E = -2;
@@ -16,42 +16,44 @@ namespace LYA1_Lexico3
 
    int[,] TRAND =
         {
-        //  WS, L, D, ., E, +, -,La, =, ;,  &,|, !, <, >, %, *, ?,  ",  /, {   },EOF,EOL,
-            {0, 1, 2, 8, 1, 19,20,8, 8, 10,11,12,13,17,16,22,22,24, 25, 28,32, 33,F,0}, // 0
-            {F, 1, 1, F, 1, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 1
-            {F, F, 2, 3, 5, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 2
-            {E, E, 4, E, E, E, E, E, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 3
-            {F, F, 4, F, 5, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 4
-            {E, E, 7, E, E, 6, 6, E, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 5
-            {E, E, 7, E, E, E, E, E, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 6
-            {F, F, 7, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 7
-            {F, F, F, F, F, F, F, F, 9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 8
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 9
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 10
-            {F, F, F, F, F, F, F, F, F, F, 14,F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 11
-            {F, F, F, F, F, F, F, F, F, F, F, 14,F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 12
-            {F, F, F, F, F, F, F, F, 9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 13
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 14
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 15
-            {F, F, F, F, F, F, F, F, 9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 16
-            {F, F, F, F, F, F, F, F, 9, F, F, F, F, F, 16,F, F, F,  F,  F, F,  F, F,F}, // 17
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 18
-            {F, F, F ,F, F, 21,F, F, 21,F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 19
-            {F, F, F, F, F, F, 21,F, 21,F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 20
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 21
-            {F, F, F, F, F, F, F, F, 23,F, F, F ,F, F, F, 23,23,F,  F,  F, F,  F, F,F}, // 22
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 23
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 24
-            {25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,26,  F, 25,25, E,F}, // 25
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 26
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 27
-            {F, F, F, F, F, F, F, F, 23,F, F, F, F, F, F, F, 30, F, F, 29, F,  F, F,F}, // 28
-            {29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29, 29, 29,29,29,0}, // 29
-            {30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,31,30, 30, 31,30,E,30}, // 30
-            {30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,31,30, 0,  30,30,E,30}, // 31
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F, F,  32,  F, F,F}, // 32
-            {F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F,  F, F,  F,  33, F,F}, // 33
-        //  WS, L, D, ., E, +, -,La, =, ;,  &,|, !, <, >, %, *, ?,  ",  /, {   },EOF,EOL,
+        //  0,  1, 2, 3, 4, 5, 6,  7,  8, 9,10,11,12,13,14,15,16,17, 18, 19, 20, 21,22,23
+        //  WS, L, D, ., E, +, -,  La, =, ;, &, |, !, <, >, %, *, ?,  ",  /, {,  },EOF,EOL,
+            {0, 1, 2, 8, 1, 19,20, 8, 8, 10,11,12,13,17,16,22,22,24, 25, 28,2,  33,F,0}, // 0
+            {F, 1, 1, F, 1, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 1
+            {F, F, 2, 3, 5, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 2
+            {E, E, 4, E, E, E, E,  E,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 3
+            {F, F, 4, F, 5, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 4
+            {E, E, 7, E, E, 6, 6,  E,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 5
+            {E, E, 7, E, E, E, E,  E,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 6
+            {F, F, 7, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 7
+            {F, F, F, F, F, F, F,  F,  9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 8
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 9
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 10
+            {F, F, F, F, F, F, F,  F,  F, F, 14,F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 11
+            {F, F, F, F, F, F, F,  F,  F, F, F, 14,F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 12
+            {F, F, F, F, F, F, F,  F,  9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 13
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 14
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 15
+            {F, F, F, F, F, F, F,  F,  9, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 16
+            {F, F, F, F, F, F, F,  F,  9, F, F, F, F, F, 16,F, F, F,  F,  F, F,  F, F,F}, // 17
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 18
+            {F, F, F ,F, F, 21,F,  F,  21,F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 19
+            {F, F, F, F, F, F, 21 ,F,  21,F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 20
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 21
+            {F, F, F, F, F, F, F,  F,  23,F, F, F ,F, F, F, 23,23,F,  F,  F, F,  F, F,F}, // 22
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 23
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 24
+            {25,25,25,25,25,25,25, 25, 25,25,25,25,25,25,25,25,25,25,26,  F, 25,25, E,F}, // 25
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 26
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F,  F, F,  F, F,F}, // 27
+            {F, F, F, F, F, F, F,  F,  23,F, F, F, F, F, F, F, 30, F, F, 29, F,  F, F,F}, // 28
+            {29,29,29,29,29,29,29, 29, 29,29,29,29,29,29,29,29,29,29,29, 29,29, 29, 29,0}, // 29
+            {30,30,30,30,30,30,30, 30, 30,30,30,30,30,30,30,30,30,31,30, 30,31, 30, E,30}, // 30
+            {30,30,30,30,30,30,30, 30, 30,30,30,30,30,30,30,30,30,31,30, 0, 30, 30, E,30}, // 31
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F, F,  32,  F,F,F}, // 32
+            {F, F, F, F, F, F, F,  F,  F, F, F, F, F, F, F, F, F, F,  F, F,  F,  33,F,F}, // 33
+         //  0,  1, 2, 3, 4, 5, 6,  7,  8, 9,10,11,12,13,14,15,16,17, 18, 19, 20, 21,22,23
+         //  WS, L, D, ., E, +, -,  La, =, ;, &, |, !, <, >, %, *, ?,  ",  /, {,  },EOF,EOL,
          };
         public Lexico()
         {
@@ -72,18 +74,16 @@ namespace LYA1_Lexico3
         }
         private int columna(char c)
         {
-             if (c == '\n')
+           if (char.IsWhiteSpace(c))
                 return 0;
-           else if (char.IsWhiteSpace(c))
-                return 0;
-            else if (char.ToLower(c) == 'e')
-                return 4;
             else if (char.IsLetter(c))
                 return 1;
             else if (char.IsAsciiDigit(c))
                 return 2;
             else if (c=='.')
                 return 3;
+             else if (char.ToLower(c) == 'e')
+                return 4;
             else if (c=='+')
                 return 5;
             else if (c=='-')
@@ -92,7 +92,7 @@ namespace LYA1_Lexico3
                 return 8;
             else if (c==';')
                 return 9;
-            else if (c=='&')
+           else if (c=='&')
                 return 10;
             else if (c=='|')
                 return 11;
@@ -102,21 +102,23 @@ namespace LYA1_Lexico3
                 return 13;
             else if (c=='>')
                 return 14;
-            else if (c=='%'||c=='*')
+            else if (c=='%')
+                return 15;
+            else if ( c=='*')
                 return 15;
             else if (c=='?')
                 return 17;
             else if (c == '\"')
                 return 18;
-            else if (c=='/')
+             else if (c=='/')
                 return 15;
-            else if (c == '}')
-                return 20;
             else if (c == '{')
+                return 20;
+            else if (c == '}')
                 return 21;
             else if (FinArchivo())
                 return 22;
-            else if (c == '\n')
+              else if (c == '\n')
                 return 0;
                 else 
                 return 7;
@@ -145,10 +147,10 @@ namespace LYA1_Lexico3
                 case 24 : setClasificacion(Tipos.OpTernario);break;
                 case 25: setClasificacion(Tipos.cadena);break;
                 case 26 : setClasificacion(Tipos.cadena);break;
-                case 27 : setClasificacion( Tipos.cadena); break;
+                case 27 : setClasificacion(Tipos.Caracter);break;
+                case 28 : setClasificacion(Tipos.OpFactor);break;
                 case 32 : setClasificacion(Tipos.Inicio);break;
-                case 28 : setClasificacion(Tipos.Fin);break;
-
+                case 33 : setClasificacion(Tipos.Fin);break;
 
             }
         }
@@ -180,7 +182,11 @@ namespace LYA1_Lexico3
             }
             if (estado == E)
             {
-                throw new Error("Lexico: Se espera un digito",log);
+                if (getClasificacion()==Tipos.Numero)
+                    throw new Error("Lexico: Se espera un digito",log);
+                else
+                    throw new Error("Lexico: no se cerro la cadena",log);
+                
             }
             setContenido(buffer);
             log.WriteLine(getContenido() + " = " + getClasificacion());
