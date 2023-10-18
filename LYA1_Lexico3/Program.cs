@@ -18,7 +18,6 @@ namespace LYA1_Lexico3
                         L.nextToken();
                     }
                 }
-                
             } 
             catch (Exception e)
             {
