@@ -1,0 +1,14 @@
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\bin\Debug\net7.0\LYA1_Lexico3.exe
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\bin\Debug\net7.0\LYA1_Lexico3.deps.json
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\bin\Debug\net7.0\LYA1_Lexico3.runtimeconfig.json
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\bin\Debug\net7.0\LYA1_Lexico3.dll
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\bin\Debug\net7.0\LYA1_Lexico3.pdb
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.AssemblyInfoInputs.cache
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.AssemblyInfo.cs
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.csproj.CoreCompileInputs.cache
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.dll
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\refint\LYA1_Lexico3.dll
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.pdb
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\LYA1_Lexico3.genruntimeconfig.cache
+C:\Users\Giezi Nuñez\Documents\ITQ\4.- CUARTO SEMESTRE\LENGUAJE AUTOMATAS\unidad 2\LYA1_Lexico2\LYA1_Lexico3\obj\Debug\net7.0\ref\LYA1_Lexico3.dll
